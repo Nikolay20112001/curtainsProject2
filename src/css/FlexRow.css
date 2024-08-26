@@ -1,0 +1,51 @@
+.FlexRow {
+    display: flex;
+}
+
+.FlexRow-ratingAndFabricSample {
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.FlexRow-CalculatorInputs {
+    margin-top: 30px;
+    column-gap: 20px;
+}
+
+.FlexRow-cardCategoryAndFavourite {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.FlexRow-cardPrices {
+    margin-top: 40px;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.FlexRow-incurence {
+    margin-top: 40px;
+    align-items: center;
+}
+
+.FlexRow-addCartAndOptionsButtons {
+    margin-top: 40px;
+    column-gap: 20px;
+}
+
+.FlexRow-productQuantity {
+    margin-top: 10px;
+    min-height: 48px;
+    align-items: center;
+}
+
+.FlexRow-calculatorTitleAndHelp {
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.FlexRow-cardDelivery {
+    margin: 26px 0 0 0;
+    justify-content: center;
+}

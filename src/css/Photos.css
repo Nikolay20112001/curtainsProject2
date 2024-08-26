@@ -1,0 +1,17 @@
+.Photos {
+    width: 100%;
+    display: grid;
+    grid-template-rows: max-content;
+    grid-template-columns: max-content;
+    grid-template-areas: 
+                        "b a"
+                        "c a"
+                        "d a"
+                        "e a"
+                        "f a"
+                        "g a";
+    align-content: start;
+    row-gap: 10px;
+    column-gap: 30px;
+    margin-right: 60px;
+}

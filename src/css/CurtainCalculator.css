@@ -1,0 +1,9 @@
+.CurtainCalculator {
+    display: flex;
+    flex-direction: column;
+    width: 553px;
+    margin: 40px auto 0 auto;
+    background-color: #F5F3F1;
+    padding: 30px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,9 @@
+.CalculatorInput {
+    width: 175.5px;
+    height: 48px;
+    border-radius: 5px;
+    border: 0;
+    margin: 10px 0 0 0;
+    padding: 15px 16px 16px 16px;
+    box-sizing: border-box;
+}

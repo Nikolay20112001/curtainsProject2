@@ -1,0 +1,16 @@
+.MiniPhoto {
+    width: 116px;
+    height: 110px;
+}
+
+.MiniPhoto-darkSubstrate {
+    background-color: #333;  
+}
+
+
+.MiniPhoto:hover {
+    filter: brightness(70%);
+    background-image: url(../images/polygon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}

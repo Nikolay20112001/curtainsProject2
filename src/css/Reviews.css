@@ -1,0 +1,11 @@
+.Reviews {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color: #878787;
+    margin: 0 0 0 20px;
+    border-bottom: 1px solid #878787;
+    text-decoration: none;
+    box-sizing: border-box;
+}

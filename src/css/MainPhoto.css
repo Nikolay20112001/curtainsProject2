@@ -1,0 +1,64 @@
+.MainPhoto {
+    display: flex;
+    width: 961px;
+    height: 680px;
+    grid-area: a;
+    background-color: #F5F3F1;
+    justify-content: space-between;
+}
+
+.MainPhoto-photo {
+    width: 643;
+    height: 643;
+}
+
+.MainPhoto-previousPhoto {
+    width: 42.22px;
+    height: 42.22px;
+    box-sizing: border-box;
+    border: 2px solid #878787;
+    background-color: transparent;
+    transform: rotate(45deg);
+    border-top: 0;
+    border-right: 0;
+    align-self: center;
+    margin-left: 30px;
+}
+
+.MainPhoto-previousPhoto:hover {
+    opacity: .6;
+}
+
+.MainPhoto-nextPhoto {
+    width: 42.22px;
+    height: 42.22px;
+    box-sizing: border-box;
+    border: 2px solid #878787;
+    background-color: transparent;
+    transform: rotate(45deg);
+    border-bottom: 0;
+    border-left: 0;
+    align-self: center;
+    margin-right: 30px;
+}
+
+.MainPhoto-nextPhoto:hover {
+    opacity: .6;
+}
+
+.MainPhoto-category {
+    position: absolute;
+    width: 165px;
+    height: 39px;
+    padding: 10px 24px 10px 24px;
+    gap: 10px;
+    border-radius: 90px;
+    border: 0;
+    background-color: #333;
+    color: white;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    margin: 30px 0 0 30px;
+}

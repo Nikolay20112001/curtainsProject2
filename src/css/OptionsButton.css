@@ -1,0 +1,12 @@
+.OptionsButton {
+    width: 266px;
+    height: 59px;
+    border-radius: 5px;
+    background-color: white;
+    font-family: Manrope;
+    padding: 20px, 24px, 20px, 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    border: 1px solid #333;
+}

@@ -1,0 +1,15 @@
+.CardDelivery {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    margin: 0;
+}
+
+.CardDelivery-helpButton {
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/help.png);
+    border: 0;
+    margin: 0 0 7px 5px;
+}

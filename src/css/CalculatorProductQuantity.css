@@ -1,0 +1,24 @@
+.CalculatorProductQuantity {
+    font-family: Manrope;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+    color: #333;
+    margin: auto 10px auto 10px;
+}
+
+.CalculatorProductQuantity-minus {
+    width: 36px;
+    height: 36px;
+    border-radius: 90px;
+    border: 0;
+    background: #ECE5DE;
+}
+
+.CalculatorProductQuantity-plus {
+    width: 36px;
+    height: 36px;
+    border-radius: 90px;
+    border: 0;
+    background: #ECE5DE;
+}

@@ -1,0 +1,17 @@
+.CalculatorDiscount {
+    font-family: Manrope;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.4px;
+    color: white;
+    margin: auto;
+}
+
+.CalculatorDiscount-circle {
+    background-color: #333;
+    width: 45px;
+    height: 44px;
+    border-radius: 90px;
+    display: flex;
+    margin: 0;
+}

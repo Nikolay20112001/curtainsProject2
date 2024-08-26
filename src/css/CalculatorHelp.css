@@ -1,0 +1,17 @@
+.CalculatorHelp {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color: #878787;
+    margin: 0;
+    text-decoration: none;
+}
+
+.CalculatorHelp-button {
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/help.png);
+    border: 0;
+    margin: 0 0 7px 5px;
+}
