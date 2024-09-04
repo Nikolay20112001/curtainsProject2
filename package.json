@@ -1,5 +1,4 @@
 {
-  "homepage": "https://nikolay20112001.github.io/curtainsProject",
   "name": "card",
   "version": "0.1.0",
   "homepage": "https://nikolay20112001.github.io/curtainsProject/",
@@ -15,11 +14,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-<<<<<<< HEAD
     "deploy": "gh-pages -d build",
-=======
-    "deploy": "main -d build",
->>>>>>> d6b5ff2b9903ff47798b2050e2ffbf825bc41d70
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
