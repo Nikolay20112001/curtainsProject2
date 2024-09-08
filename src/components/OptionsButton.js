@@ -5,6 +5,11 @@ import '../css/TabComponent.css';   // Подключаем стили для э
 const OptionsButton = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [currentStep, setCurrentStep] = useState(0);  // Текущий шаг
+    const [selectedOptions, setSelectedOptions] = useState({
+        option1: true,
+        option2: false,
+        option3: true
+    });
 
     const steps = [
         { title: "Тип установки", styleClass: "step-installation" },
@@ -38,6 +43,14 @@ const OptionsButton = () => {
         if (currentStep > 0) {
             setCurrentStep(currentStep - 1);  // Переход на предыдущий шаг
         }
+    };
+
+    // Функция для обработки изменения состояния опций
+    const handleOptionChange = (option) => {
+        setSelectedOptions({
+            ...selectedOptions,
+            [option]: !selectedOptions[option]
+        });
     };
 
     // Рассчитываем ширину прогресса
@@ -79,52 +92,97 @@ const OptionsButton = () => {
 
                     {/* Описание этапа */}
                     <div className="step-description">
-                        <img src="/images/VideoIcon.png" alt="Видео" className="description-icon" />
-                        <p>{descriptions[currentStep]}</p>
-                    </div>
-
-                    {/* Элемент с изображением и опциями */}
-                    <div className="selection-options">
-                        <img src="/images/Placeholder.png" alt="Изображение" className="selection-image" />
-
-                        <div className="option-list">
-                            <div className="option-item">
-                                <input type="checkbox" checked />
-                                <label>На скотч (без сверления)</label>
-                                <span>0 ₽</span>
+                        <div className="video-container">
+                            <div className="icon-container">
+                                <img src={require('../images/Youtube.png')} alt="Смотреть видео" className="youtube-icon" />
                             </div>
-                            <div className="option-item">
-                                <input type="checkbox" />
-                                <label>Кронштейн на откидную створку (без сверления)</label>
-                                <span>0 ₽</span>
-                            </div>
-                            <div className="option-item">
-                                <input type="checkbox" checked />
-                                <label>На саморезы</label>
-                                <span>0 ₽</span>
+                            <div className="link-container">
+                                <a href="#" className="watch-video-link">Смотреть видео</a>
                             </div>
                         </div>
 
-                        <div className="total-price">
-                            Общая стоимость: <strong>11 243 ₽</strong>
+                        <div className="description-content">
+                            <img src={require('../images/Answer.png')} alt="Иконка" className="description-icon" />
+                            <div className="description-text">
+                                <p>{descriptions[currentStep]}</p>
+                                <div className="read-more-container">
+                                    <button className="read-more">Читать дальше</button>
+                                    <img src={require('../images/arrow-down.png')} alt="Иконка" className="read-more-icon" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Кнопки навигации с нумерацией шага */}
-                    <div className="step-navigation">
-                        <button className="prev-button" onClick={handlePrevStep} disabled={currentStep === 0}>
-                            Назад
-                        </button>
-
-                        {/* Нумерация шагов */}
-                        <div className="step-counter">
-                            {currentStep + 1}/{steps.length}
+                    {/* Два контейнера на одном уровне */}
+                    <div className="selection-container">
+                        {/* Изображение слева */}
+                        <div className="selection-image-container">
+                            <img src={require('../images/Image-type-install.png')} alt="Изображение" className="selection-image" />
                         </div>
 
-                        <button className="next-button" onClick={handleNextStep} disabled={currentStep === steps.length - 1}>
-                            Далее
-                        </button>
+                        {/* Контейнер с листом опций и итоговой ценой справа */}
+                        <div className="options-and-price-container">
+                            {/* Лист с опциями */}
+                            <div className="option-list">
+                                <div className="option-item">
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedOptions.option1}
+                                        onChange={() => handleOptionChange("option1")}
+                                    />
+                                    <div className={`option-details ${selectedOptions.option1 ? 'selected' : ''}`}>
+                                        <label>На скотч (без сверления)</label>
+                                        <span className="option-price">0 ₽</span>
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedOptions.option2}
+                                        onChange={() => handleOptionChange("option2")}
+                                    />
+                                    <div className={`option-details ${selectedOptions.option2 ? 'selected' : ''}`}>
+                                        <label>Кронштейн на откидную створку (без сверления)</label>
+                                        <span className="option-price">0 ₽</span>
+                                    </div>
+                                </div>
+                                <div className="option-item">
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedOptions.option3}
+                                        onChange={() => handleOptionChange("option3")}
+                                    />
+                                    <div className={`option-details ${selectedOptions.option3 ? 'selected' : ''}`}>
+                                        <label>На саморезы</label>
+                                        <span className="option-price">0 ₽</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Итоговая стоимость */}
+                            <div className="total-price">
+                                Общая стоимость: <strong className="total-price-value">11 243 ₽</strong>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                {/* Кнопки навигации с нумерацией шага */}
+                <div className="step-navigation">
+                    <button className="prev-button" onClick={handlePrevStep} disabled={currentStep === 0}>
+                        <img src={require('../images/arrow-left.png')} alt="Назад" className="arrow-icon" />
+                        Назад
+                    </button>
+
+                    {/* Нумерация шагов */}
+                    <div className="step-counter">
+                        <span className="step-current">{currentStep + 1}/</span><span className="step-total">{steps.length}</span>
+                    </div>
+
+                    <button className="next-button" onClick={handleNextStep} disabled={currentStep === steps.length - 1}>
+                        Далее
+                        <img src={require('../images/arrow-right.png')} alt="Веперёд" className="arrow-icon" />
+                    </button>
                 </div>
             </div>
         </div>

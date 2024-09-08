@@ -1,3 +1,4 @@
+/*
 import React, { useState } from 'react';
 import '../css/TabComponent.css';  // Подключаем стили для вкладок
 
@@ -24,3 +25,4 @@ const TabComponent = () => {
 };
 
 export default TabComponent;
+*/

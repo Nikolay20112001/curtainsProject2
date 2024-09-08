@@ -121,6 +121,8 @@
   height: auto;
   min-height: 42px;
   column-gap: 10px; /* Промежутки между табами */
+  transition: transform 0.3s ease-in-out;
+  position: relative; /* Относительное позиционирование для корректной работы со смещением */
 }
 
 /* Этапы (табы) */
@@ -140,14 +142,6 @@
   color: #878787;
   white-space: nowrap;
   transition: background-color 0.3s, color 0.3s;
-}
-
-.tab-item:first-child {
-  margin-left: 0;
-}
-
-.tab-item:last-child {
-  margin-right: 0;
 }
 
 .tab-item.active {
@@ -187,7 +181,6 @@
   min-width: 219px;
 }
 
-
 /* Прогресс-бар */
 .progress-bar-background {
   width: 1080px;
@@ -205,67 +198,291 @@
   transition: width 0.3s ease-in-out;
 }
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!ДОДЕЛАТЬ С ЭТОГО МЕСТА!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-/* Описание этапа с gap */
+/* Описание этапа */
 .step-description {
   display: flex;
-  width: 100%; 
-  max-width: 1080px;
-  height: auto;
-  min-height: 83px;
-  border-radius: 10px;
-  gap: 20px; /* Промежуток между иконкой и текстом */
   align-items: center;
-  margin-top: 20px;
-  font-family: Manrope;
+  width: 100%;
+  max-width: 1080px;
+  gap: 20px; /* Промежуток между элементами */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  font-family: Manrope, sans-serif;
   font-size: 16px;
   color: #333;
-  background-color: #FFFFFF;
+    
+}
+
+/* Блок со ссылкой на видео YouTube */
+.video-container {
+  width: auto;
+  min-width: 71px;
+  height: 100%; 
+  max-height: 83px;
+  padding: 10px 0 0 0; /* Верхний отступ 10px */
+  gap: 5px; /* Отступ между иконкой и ссылкой */
+  border-radius: 5px 0 0 0; /* Скругление углов */
+  opacity: 1; /* Устанавливаем, чтобы элемент был видим */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  text-decoration-line: underline;
+}
+
+.icon-container {
+  margin-bottom: 0px; /* Расстояние между иконкой и ссылкой */
+}
+
+.youtube-icon {
+  width: 48.57px; /* Примерный размер иконки YouTube */
+  height: 34px;
+}
+
+.link-container {
+  font-size: 10px;
+  font-family: 'Manrope';
+  font-weight: 400;
+  line-height: 12px;
+  text-align: center;
+  color: #333333;
+  width: 51px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.watch-video-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.watch-video-link:hover {
+  text-decoration: underline;
+}
+
+/* Блок с иконкой и текстом */
+.description-content {
+  display: flex;
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  justify-content: flex-start;
+  width: 100%; 
+  max-width: 929px;
+  height: auto;
+  min-height: 71px;
+  gap: 10px;
+  padding: 0px 40px 0px 0px;
 }
 
 .description-icon {
-  width: 30px;
-  height: 30px;
+    width: 10px;
+    height: 10px;
 }
 
-/* Элемент с изображением и опциями */
-.selection-options {
+.description-text {
   display: flex;
-  gap: 40px; /* Промежуток между изображением и списком опций */
-  margin-top: 20px;
+  flex-direction: column;
+  justify-content: flex-start; /* Выравнивание по верхнему краю */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  max-width: 800px; /* Ограничиваем ширину текста */
+  font-family: Manrope;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+.description-text p {
+  width: 959px;
+  height: 38px;
+  margin: 0; /* Убираем внешние отступы */
+  padding: 0; /* Убираем внутренние отступы */
+  text-align: left; /* Выравниваем текст по левому краю */
+  line-height: 19.12px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.read-more-container {
+  display: flex;
+  width: auto;
+  min-width: 117px;
+  height: auto;
+  min-height: 23px;
+  align-items: center; /* Выровняем иконку и текст по одной линии */
+  gap: 5px; /* Отступ между текстом и иконкой */
+  padding: 3px 0px 3px 0px;
+  border: 0px 0px 1px 0px;
+}
+
+.read-more {
+  display: inline; /* Вставляем кнопку в строку с текстом */
+  width: auto;
+  min-width: 101px;
+  height: auto;
+  min-height: 17px;
+  background: none;
+  border: none;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  color: #878787;
+  cursor: pointer;
+  padding: 3px 0px 3px 0px;
+}
+
+.read-more:hover {
+  color: #555; /* Изменение цвета при наведении */
+}
+
+.read-more-icon {
+  width: 11px;
+  height: 9px;
+}
+
+/* Контейнер для изображения и опций */
+.selection-container {
+  display: flex;
+  align-items: flex-start; /* Выровняем элементы по верхнему краю */
+}
+
+/* Контейнер для изображения */
+.selection-image-container {
+  width: 282px;
+  height: 266px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .selection-image {
-  width: 150px;
-  height: 150px;
-  background-color: #333;
+  width: 282px;
+  height: 266px;
 }
 
+/* Контейнер для опций и итоговой стоимости */
+.options-and-price-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  max-width: 798px;
+  height: auto;
+  min-height: 267px;
+  gap: 50px;
+  padding: 0px 40px 0px 40px;
+  opacity: 1;
+}
+
+/* Лист опций */
 .option-list {
   display: flex;
   flex-direction: column;
+  width: 100%; 
+  max-width: 718px;
+  height: auto;
+  min-height: 190px;
+  gap: 20px;
 }
 
 .option-item {
   display: flex;
-  align-items: center;
+  width: auto;
+  height: auto;
   justify-content: space-between;
-  margin-bottom: 10px;
+  align-items: flex-start;
   font-family: Manrope;
   font-size: 16px;
+  gap: 15px;
   color: #333;
 }
 
-.option-item input {
-  margin-right: 10px;
+/* Стили для чекбоксов */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border: 1px solid #878787;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
 }
 
-.total-price {
+/* Стиль для активного чекбокса */
+input[type="checkbox"]:checked {
+  background-color: #FFFFFF;
+  border-color: #333333;
+}
+
+/* Галочка внутри активного чекбокса */
+input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 11px;  /* Ширина галочки */
+  height: 5px;  /* Высота галочки */
+  border: solid #333333;
+  border-width: 0 0 2px 2px;  /* Устанавливаем ширину границ */
+  transform: rotate(-45deg);  /* Угол поворота */
+  top: 3.78px;  /* Позиционирование по вертикали */
+  left: 3px;     /* Позиционирование по горизонтали */
+}
+
+/* Контейнер для текста опции и цены */
+.option-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выровняем текст по левому краю */
+  width: 100%; /* Гарантируем, что текст не растягивается */
+  gap: 4px;
   font-family: Manrope;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
   color: #333;
-  margin-top: 10px;
+}
+
+.option-details.selected {
+  font-weight: 600; /* Если выбран, делаем жирный шрифт */
+}
+
+.option-price {
+  font-size: 14px;
+  color: #333333;
+  width: 100%; /* Гарантируем, что текст не растягивается */
+  height: auto;
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.32px;
+  text-align: left;
+}
+
+/* Итоговая цена */
+.total-price {
+  width: 254px;
+  height: 27px;
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.32px;
+  text-align: left;
+  margin-top: auto;
+  color: #000000;
+}
+
+/* Настраиваемый стиль для суммы */
+.total-price-value {
+  font-family: Manrope;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27.32px;
+  color: #000000;
 }
 
 /* Кнопки навигации */
@@ -273,7 +490,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  width: 100%; 
+  max-width: 1080px;
+  height: auto;
+  min-height: 59px;
+  padding: 40px;
 }
 
 /* Нумерация шагов */
@@ -285,24 +506,75 @@
   text-align: center;
 }
 
+.step-current {
+  font-size: 24px; /* Увеличенный размер для левого числа */
+  font-weight: 400;
+}
+
 /* Кнопки назад и далее */
-.prev-button, .next-button {
-  padding: 10px 20px;
+.prev-button {
+  padding: 20px 24px 20px 24px;
+  width: auto;
+  min-width: 110.14px;
+  height: auto;
+  min-height: 59px;
   font-family: Manrope;
   font-size: 16px;
   font-weight: 600;
+  line-height: 19.2px;
+  text-align: center;
   border-radius: 5px;
-  background-color: #E5E5E5;
-  border: none;
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  color: #333;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+.next-button {
+  padding: 20px 24px 20px 24px;
+  width: auto;
+  min-width: 110.14px;
+  height: auto;
+  min-height: 59px;
+  font-family: Manrope;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
+  text-align: center;
+  border: 1px solid #333333;
+  color: #FFFFFF;
+  border-radius: 5px;
+  background-color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+/*
 .prev-button:hover, .next-button:hover {
   background-color: #ccc;
 }
+*/
 
 .prev-button:disabled, .next-button:disabled {
-  background-color: #f1f1f1;
+  background-color: #FFFFFF;
+  color: #333;
   cursor: not-allowed;
+}
+
+.next-button:disabled {
+  background-color: #333333;
+  color: #FFFFFF;
+  cursor: not-allowed;
+}
+
+.prev-button .arrow-icon {
+  width: 10px;  /* Задаем ширину и высоту для стрелки */
+  height: 10px;
+  margin-right: 10px; /* Отступ между стрелкой и текстом */
+}
+
+.next-button .arrow-icon {
+  width: 10px;  /* Задаем ширину и высоту для стрелки */
+  height: 10px;
+  margin-left: 10px; /* Отступ между стрелкой и текстом */
 }
