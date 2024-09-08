@@ -117,6 +117,7 @@
 /* Контейнер этапов (табы) */
 .tab-container {
   display: flex;
+  overflow: hidden;
   width: 1080px;
   height: auto;
   min-height: 42px;

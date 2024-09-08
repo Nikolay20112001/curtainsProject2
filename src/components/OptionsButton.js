@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/OptionsButton.css';  // Подключаем стили для кнопки
 import '../css/TabComponent.css';   // Подключаем стили для этапов
 
@@ -10,6 +10,9 @@ const OptionsButton = () => {
         option2: false,
         option3: true
     });
+    
+    // Реф для контейнера табов
+    const tabContainerRef = useRef(null);
 
     const steps = [
         { title: "Тип установки", styleClass: "step-installation" },
@@ -45,6 +48,29 @@ const OptionsButton = () => {
         }
     };
 
+    // Прокручиваем контейнер табов при изменении шага
+    useEffect(() => {
+        if (tabContainerRef.current) {
+            const container = tabContainerRef.current;
+
+            if (currentStep >= 4) {
+                // Прокрутка вперёд для шага 5 и выше
+                const activeTab = container.children[currentStep];
+                const scrollOffset = activeTab.offsetLeft - container.offsetLeft;
+                container.scrollTo({
+                    left: scrollOffset,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Возвращаем контейнер в начало при переходе на шаг 4 и меньше
+                container.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [currentStep]);
+
     // Функция для обработки изменения состояния опций
     const handleOptionChange = (option) => {
         setSelectedOptions({
@@ -74,7 +100,7 @@ const OptionsButton = () => {
                     </div>
 
                     {/* Этапы (табы) с индивидуальными стилями */}
-                    <div className="tab-container">
+                    <div className="tab-container" ref={tabContainerRef}>
                         {steps.map((step, index) => (
                             <div
                                 key={index}
@@ -181,7 +207,7 @@ const OptionsButton = () => {
 
                     <button className="next-button" onClick={handleNextStep} disabled={currentStep === steps.length - 1}>
                         Далее
-                        <img src={require('../images/arrow-right.png')} alt="Веперёд" className="arrow-icon" />
+                        <img src={require('../images/arrow-right.png')} alt="Вперёд" className="arrow-icon" />
                     </button>
                 </div>
             </div>
