@@ -10,7 +10,7 @@ const OptionsButton = () => {
         option2: false,
         option3: true
     });
-    
+
     // Реф для контейнера табов
     const tabContainerRef = useRef(null);
 
@@ -30,6 +30,90 @@ const OptionsButton = () => {
         "Описание для Фиксации",
         "Описание для Цветовой гаммы",
         "Описание для Удобства управления"
+    ];
+
+    // Содержимое selection-container и изображений для каждого таба
+    const selectionContent = [
+        (
+            <div className="selection-container">
+                {/* Изображение слева */}
+                <div className="selection-image-container">
+                    <img src={require('../images/Image-type-install.png')} alt="Изображение" className="selection-image" />
+                </div>
+
+                {/* Контейнер с листом опций и итоговой ценой справа */}
+                <div className="options-and-price-container">
+                    {/* Лист с опциями */}
+                    <div className="option-list">
+                        <div className="option-item">
+                            <input
+                                type="checkbox"
+                                checked={selectedOptions.option1}
+                                onChange={() => handleOptionChange("option1")}
+                            />
+                            <div className={`option-details ${selectedOptions.option1 ? 'selected' : ''}`}>
+                                <label>На скотч (без сверления)</label>
+                                <span className="option-price">0 ₽</span>
+                            </div>
+                        </div>
+                        <div className="option-item">
+                            <input
+                                type="checkbox"
+                                checked={selectedOptions.option2}
+                                onChange={() => handleOptionChange("option2")}
+                            />
+                            <div className={`option-details ${selectedOptions.option2 ? 'selected' : ''}`}>
+                                <label>Кронштейн на откидную створку (без сверления)</label>
+                                <span className="option-price">0 ₽</span>
+                            </div>
+                        </div>
+                        <div className="option-item">
+                            <input
+                                type="checkbox"
+                                checked={selectedOptions.option3}
+                                onChange={() => handleOptionChange("option3")}
+                            />
+                            <div className={`option-details ${selectedOptions.option3 ? 'selected' : ''}`}>
+                                <label>На саморезы</label>
+                                <span className="option-price">0 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Итоговая стоимость */}
+                    <div className="total-price">
+                        Общая стоимость: <strong className="total-price-value">11 243 ₽</strong>
+                    </div>
+                </div>
+            </div>
+        ),
+        (
+            <div className="selection-container">
+                {/* Изображение слева */}
+                <div className="selection-image-container">
+                    <img src={require('../images/Youtube.png')} alt="Изображение" className="selection-image" />
+                </div>
+
+                {/* Контейнер с листом опций и итоговой ценой справа */}
+                <div className="options-and-price-container">
+                    <div className="option-list">
+                        <div className="option-item">
+                            <label htmlFor="visibility">Видимость рулона</label>
+                            <select id="visibility" name="visibility">
+                                <option value="visible">Рулон виден</option>
+                                <option value="hidden">Рулон не виден</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Итоговая стоимость */}
+                    <div className="total-price">
+                        Общая стоимость: <strong className="total-price-value">11 243 ₽</strong>
+                    </div>
+                </div>
+            </div>
+        ),
+        // Добавьте содержимое для остальных табов, если нужно
     ];
 
     const toggleMenu = () => {
@@ -141,55 +225,8 @@ const OptionsButton = () => {
 
                     {/* Два контейнера на одном уровне */}
                     <div className="selection-container">
-                        {/* Изображение слева */}
-                        <div className="selection-image-container">
-                            <img src={require('../images/Image-type-install.png')} alt="Изображение" className="selection-image" />
-                        </div>
-
-                        {/* Контейнер с листом опций и итоговой ценой справа */}
-                        <div className="options-and-price-container">
-                            {/* Лист с опциями */}
-                            <div className="option-list">
-                                <div className="option-item">
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedOptions.option1}
-                                        onChange={() => handleOptionChange("option1")}
-                                    />
-                                    <div className={`option-details ${selectedOptions.option1 ? 'selected' : ''}`}>
-                                        <label>На скотч (без сверления)</label>
-                                        <span className="option-price">0 ₽</span>
-                                    </div>
-                                </div>
-                                <div className="option-item">
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedOptions.option2}
-                                        onChange={() => handleOptionChange("option2")}
-                                    />
-                                    <div className={`option-details ${selectedOptions.option2 ? 'selected' : ''}`}>
-                                        <label>Кронштейн на откидную створку (без сверления)</label>
-                                        <span className="option-price">0 ₽</span>
-                                    </div>
-                                </div>
-                                <div className="option-item">
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedOptions.option3}
-                                        onChange={() => handleOptionChange("option3")}
-                                    />
-                                    <div className={`option-details ${selectedOptions.option3 ? 'selected' : ''}`}>
-                                        <label>На саморезы</label>
-                                        <span className="option-price">0 ₽</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Итоговая стоимость */}
-                            <div className="total-price">
-                                Общая стоимость: <strong className="total-price-value">11 243 ₽</strong>
-                            </div>
-                        </div>
+                        {/* Отображаем содержимое в зависимости от таба */}
+                        {selectionContent[currentStep]}
                     </div>
                 </div>
 
