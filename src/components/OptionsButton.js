@@ -11,6 +11,9 @@ const OptionsButton = () => {
         option3: true
     });
 
+    const [isTextExpanded, setTextExpanded] = useState(false); // New state for text expansion
+    const [isStepExpanded, setStepExpanded] = useState(false); // State for step description expansion
+
     // Реф для контейнера табов
     const tabContainerRef = useRef(null);
 
@@ -31,6 +34,17 @@ const OptionsButton = () => {
         "Описание для Цветовой гаммы",
         "Описание для Удобства управления"
     ];
+
+    const extraContent = (
+        <>
+            <p>Установка на двухсторонний скотч</p>
+            <p>Самый быстрый и простой способ монтажа рулонных штор. Он не требует особых навыков или инструментов, что делает его идеальным для людей, которые хотят избежать сверления оконных рам.</p>
+            <p>Установка на саморезы</p>
+            <p>Кронштейны прикручиваются прямо к оконной раме с помощью саморезов. Это наиболее надежный и долговечный способ установки. Однако он потребует использования дополнительных инструментов.</p>
+            <p>Кронштейн на откидную створку</p>
+            <p>Этот способ монтажа удобен для окон с откидными створками, поскольку позволяет крепить штору непосредственно на раму створки с возможностью её открывания и закрывания.</p>
+        </>
+    );
 
     // Содержимое selection-container и изображений для каждого таба
     const selectionContent = [
@@ -132,6 +146,12 @@ const OptionsButton = () => {
         }
     };
 
+    // Toggle text expansion for both description-text and step-description
+    const handleReadMore = () => {
+        setTextExpanded(!isTextExpanded);
+        setStepExpanded(!isStepExpanded); // Expand step description as well
+    };
+
     // Прокручиваем контейнер табов при изменении шага
     useEffect(() => {
         if (tabContainerRef.current) {
@@ -201,7 +221,7 @@ const OptionsButton = () => {
                     </div>
 
                     {/* Описание этапа */}
-                    <div className="step-description">
+                    <div className={`step-description ${isStepExpanded ? 'expanded' : ''}`}>
                         <div className="video-container">
                             <div className="icon-container">
                                 <img src={require('../images/Youtube.png')} alt="Смотреть видео" className="youtube-icon" />
@@ -215,8 +235,14 @@ const OptionsButton = () => {
                             <img src={require('../images/Answer.png')} alt="Иконка" className="description-icon" />
                             <div className="description-text">
                                 <p>{descriptions[currentStep]}</p>
+                                {isTextExpanded && extraContent}
                                 <div className="read-more-container">
-                                    <button className="read-more">Читать дальше</button>
+                                    <button
+                                    className={isTextExpanded ? 'read-more-expanded' : 'read-more-collapsed'}
+                                    onClick={handleReadMore}
+                                    >
+                                    {isTextExpanded ? 'Свернуть' : 'Читать дальше'}
+                                    </button>
                                     <img src={require('../images/arrow-down.png')} alt="Иконка" className="read-more-icon" />
                                 </div>
                             </div>

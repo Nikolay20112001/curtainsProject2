@@ -67,6 +67,29 @@
   gap: 40px; /* Промежутки между элементами */
   background-color: #FFFFFF;
   opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styles */
+.new-frame::-webkit-scrollbar {
+  width: 6px;
+  opacity: 0; /* Initially hidden */
+}
+
+.new-frame::-webkit-scrollbar-thumb {
+  background: #878787;
+  border-radius: 10px;
+}
+
+.new-frame::-webkit-scrollbar-track {
+  background: #F5F3F1;
+  border-radius: 10px;
+}
+
+/* Show scrollbar on hover */
+.new-frame:hover::-webkit-scrollbar {
+  opacity: 1;
 }
 
 /* Заголовок меню с gap */
@@ -221,7 +244,7 @@
   min-width: 71px;
   height: 100%; 
   max-height: 83px;
-  padding: 10px 0 0 0; /* Верхний отступ 10px */
+  padding: 5px 0 0 0; /* Верхний отступ 10px */
   gap: 5px; /* Отступ между иконкой и ссылкой */
   border-radius: 5px 0 0 0; /* Скругление углов */
   opacity: 1; /* Устанавливаем, чтобы элемент был видим */
@@ -230,6 +253,7 @@
   align-items: center;
   border-radius: 5px;
   text-decoration-line: underline;
+  align-self: self-start;
 }
 
 .icon-container {
@@ -320,18 +344,6 @@
 }
 
 .read-more {
-  display: inline; /* Вставляем кнопку в строку с текстом */
-  width: auto;
-  min-width: 101px;
-  height: auto;
-  min-height: 17px;
-  background: none;
-  border: none;
-  font-family: Manrope;
-  font-size: 14px;
-  font-weight: 500;
-  color: #878787;
-  cursor: pointer;
   padding: 3px 0px 3px 0px;
 }
 
@@ -342,6 +354,63 @@
 .read-more-icon {
   width: 11px;
   height: 9px;
+}
+
+/* Стиль для кнопки "Читать дальше" в свернутом состоянии */
+.read-more-collapsed {
+  width: auto;
+  min-width: 101px;
+  height: auto;
+  min-height: 17px;
+  display: inline;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  color: #878787;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px 0px 3px 0px;
+  transition: color 0.3s;
+}
+
+.read-more-collapsed:hover {
+  color: #555;
+}
+
+/* Стиль для кнопки в развернутом состоянии */
+.read-more-expanded {
+  width: auto;
+  min-width: 51px;
+  height: auto;
+  min-height: 17px;
+  display: inline;
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  color: #878787;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 3px 0px 3px 0px;
+  transition: color 0.3s;
+}
+
+.read-more-expanded:hover {
+  color: #000;
+}
+
+/* Стили для иконки кнопки "Читать дальше" */
+.read-more-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+/* При развернутом состоянии иконка поворачивается */
+.read-more-expanded .read-more-icon {
+  transform: rotate(180deg);
 }
 
 /* Контейнер для изображения и опций */
