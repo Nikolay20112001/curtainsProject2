@@ -329,6 +329,15 @@
   margin-top: 10px; /* Расстояние от предыдущего текста */
   margin-bottom: 10px;
 }
+/* Стили для заголовков */
+.custom-title-last-tab {
+  font-family: 'Manrope';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21.86px;
+  text-align: left;
+  margin-bottom: 10px;
+}
 
 .description-text p {
   width: 959px;
