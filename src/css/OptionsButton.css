@@ -140,10 +140,10 @@
 /* Контейнер этапов (табы) */
 .tab-container {
   display: flex;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 1080px;
   height: auto;
-  min-height: 42px;
+  min-height: 64px;
   column-gap: 10px; /* Промежутки между табами */
   transition: transform 0.3s ease-in-out;
   position: relative; /* Относительное позиционирование для корректной работы со смещением */
@@ -216,7 +216,7 @@
 
 .progress-bar-fill {
   width: 180px;
-  height: 100%;
+  height: 1px;
   background-color: #333;
   border-radius: 20px;
   transition: width 0.3s ease-in-out;
@@ -235,7 +235,6 @@
   font-family: Manrope, sans-serif;
   font-size: 16px;
   color: #333;
-    
 }
 
 /* Блок со ссылкой на видео YouTube */
