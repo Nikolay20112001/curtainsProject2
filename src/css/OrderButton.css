@@ -1,0 +1,12 @@
+.OrderButton {
+    width: 493px;
+    height: 51px;
+    border-radius: 8px;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}

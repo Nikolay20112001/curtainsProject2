@@ -1,0 +1,14 @@
+.SpecificationsAttention {
+    margin-top: 20px;
+}
+
+.SpecificationsAttention-warningIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 11px;
+}
+
+.SpecificationsAttention-warningDescription {
+    margin: 0;
+    width: 453px;
+}

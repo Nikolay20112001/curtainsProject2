@@ -1,0 +1,20 @@
+.Grid {
+    display: grid;
+}
+
+.Grid-specificationsPhotoContainerD {
+    grid-template-columns: minmax(100px, 531px) minmax(100px, 179px) minmax(100px, 531px);
+    justify-content: space-between;
+}
+
+.Grid-specificationsCloth {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 40px;
+    margin-top: 60px;
+}
+
+.Grid-steps {
+    grid-template-columns: repeat(3, minmax(393.33px, 553.33px));
+    column-gap: 30px;
+}

@@ -1,0 +1,62 @@
+.FooterContactInfo {
+    margin-top: 35px;
+}
+
+.FooterContactInfo-phone {
+    margin: 0;
+    color: #fff;
+    font-family: Manrope;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32.78px;
+}
+
+.FooterContactInfo-workHours {
+    margin: 0;
+    color: #fff;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.86px;
+    margin-top: 9px;
+}
+
+.FooterContactInfo-callOrder {
+    margin: 0;
+    color:#333;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.86px;
+    width: 260px;
+    height: 54px;
+    background-color: #F5F3F1;
+    padding: 16px 20px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 26px;
+}
+
+.FooterContactInfo-email {
+    margin: 0;
+    font-family: Manrope;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.32px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.FooterContactInfo-address {
+    margin: 0;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.86px;
+    color:#fff;
+    width: 244px;
+    margin-top: 9px;
+}
+
+
+

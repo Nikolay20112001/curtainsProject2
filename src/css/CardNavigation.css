@@ -1,3 +1,8 @@
 .CardNavigation {
-    
+    padding-top: 99.5px;
+    background-color: #F5F3F1;
+}
+
+.CardNavigation-list {
+    list-style-type: none;
 }

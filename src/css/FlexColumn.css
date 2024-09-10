@@ -1,0 +1,48 @@
+.FlexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.FlexColumn-logoAndContactInfo {
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.FlexColumn-paymentAndRequisites {
+    margin-top: 68px;
+    margin-left: 79px;
+}
+
+.FlexColumn-footerCompanyRequisites {
+    margin-top: 34px;
+}
+
+.FlexColumn-footerPaymentMethods {
+    row-gap: 34px;
+}
+
+.FlexColumn-cardSpecifications {
+    flex-grow: 1;
+}
+
+.FlexColumn-materialSpecification {
+    flex-grow: 1;
+}
+
+.FlexColumn-selfMeasurement {
+    row-gap: 60px;
+}
+
+.FlexColumn-necessaryResources {
+    justify-content: space-between;
+}
+
+.FlexColumn-cardSpecialistMeasurementOnline {
+    width: 661px;
+    flex-shrink: 0;
+}
+
+.FlexColumn-specialistMeasurementOrder {
+    max-width: 602px;
+    column-gap: 20px;
+}

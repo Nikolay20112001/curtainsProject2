@@ -1,0 +1,15 @@
+.SpecificationsSampleOrder {
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    width: 300px;
+    height: 59px;
+    padding: 20px 40px 20px 40px;
+    gap: 10px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #333;
+    margin-top: 60px;
+}

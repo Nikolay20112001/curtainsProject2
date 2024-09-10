@@ -1,0 +1,7 @@
+.SelfMeasurementVideo {
+    width: 100%;
+    background-image: url("../images/video.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+}

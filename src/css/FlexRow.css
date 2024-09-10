@@ -49,3 +49,57 @@
     margin: 26px 0 0 0;
     justify-content: center;
 }
+
+.FlexRow-footerPaymentMethods {
+    align-items: center;
+}
+
+.FlexRow-footerBottom {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.FlexRow-cardSpecifications {
+    margin-top: 100px;
+}
+
+.FlexRow-specificationsCloth {
+    margin-top: 60px;
+    flex-grow: 1;
+    justify-content: space-between;
+    column-gap: 60px;
+}
+
+.FlexRow-videoAndResources {
+    column-gap: 60px;
+}
+
+.FlexRow-steps {
+    column-gap: 30px;
+    flex-grow: 1;
+}
+
+.FlexRow-selfMeasurementOrderMeasurer {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.FlexRow-cardSpecialistMeasurementOnline {
+    justify-content: space-between;
+    column-gap: 20px;
+    flex-shrink: 0;
+}
+
+.FlexRow-orderInputs {
+    margin-top: 20px;
+    column-gap: 20px;
+}
+
+.FlexRow-specialistMeasurementOrder {
+    align-items: center;
+    column-gap: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+}

@@ -1,0 +1,12 @@
+.OrderMeasurerButton {
+    width: 310px;
+    height: 59px;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    font-family: Manrope;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.2px;
+    color: #fff;
+    background-color: #333;
+}

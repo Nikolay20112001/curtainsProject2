@@ -1,5 +1,7 @@
 .Navigation {
     margin-top: 15px;
+    padding: 0 100px 0 100px;
+    box-sizing: border-box;
 }
 
 .Navigation-linkList {

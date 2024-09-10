@@ -1,0 +1,5 @@
+.SpecialistMeasurementImage {
+    max-width: 845px;
+    flex-grow: 1;
+    object-fit: cover;
+}

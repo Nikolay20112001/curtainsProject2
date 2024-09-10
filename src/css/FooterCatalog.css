@@ -1,0 +1,11 @@
+.FooterCatalog {
+    margin-top: 68px;
+    margin-left: 178px;
+}
+
+.FooterCatalog-linkList {
+    margin: 0;
+    padding: 0;
+    margin-top: 32px;
+    row-gap: 20px;
+}
