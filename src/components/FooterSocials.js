@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/FooterSocials.css';
-import youtube from '../images/youtube.png';
+import youtube from '../images/youtube2.png';
 import vk from '../images/vk.png';
 import telegram from '../images/telegram.png';
 
