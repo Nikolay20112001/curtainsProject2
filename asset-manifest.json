@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/curtainsProject2/static/css/main.5a6331e8.css",
+    "main.js": "/curtainsProject2/static/js/main.bcdad00f.js",
+    "static/js/453.2c89c1e2.chunk.js": "/curtainsProject2/static/js/453.2c89c1e2.chunk.js",
+    "static/media/photo2.png": "/curtainsProject2/static/media/photo2.65425d301577ead07940.png",
+    "static/media/video.png": "/curtainsProject2/static/media/video.2c0a8c355965d527cd64.png",
+    "static/media/material.png": "/curtainsProject2/static/media/material.d03aaefa4ac39ab55c0e.png",
+    "static/media/zoom.png": "/curtainsProject2/static/media/zoom.20ba8f8aa4b4118b4edf.png",
+    "static/media/tradechoice-linen-white-Photoroom.png": "/curtainsProject2/static/media/tradechoice-linen-white-Photoroom.f899fa489a8f10a54fb5.png",
+    "static/media/installer.png": "/curtainsProject2/static/media/installer.5f07cd6996ce23a515bd.png",
+    "static/media/backgroundRulet.png": "/curtainsProject2/static/media/backgroundRulet.5edecfd20a5c720b1b1b.png",
+    "static/media/Manrope.ttf": "/curtainsProject2/static/media/Manrope.e08eda3003b96222039b.ttf",
+    "static/media/frontView.png": "/curtainsProject2/static/media/frontView.e8fad9714b19ac9a7fd0.png",
+    "static/media/lowerBar.png": "/curtainsProject2/static/media/lowerBar.f1fbfcfc58c6c136c68f.png",
+    "static/media/sideView.png": "/curtainsProject2/static/media/sideView.bd0d1f5e4df9e2d633ca.png",
+    "index.html": "/curtainsProject2/index.html",
+    "main.5a6331e8.css.map": "/curtainsProject2/static/css/main.5a6331e8.css.map",
+    "main.bcdad00f.js.map": "/curtainsProject2/static/js/main.bcdad00f.js.map",
+    "453.2c89c1e2.chunk.js.map": "/curtainsProject2/static/js/453.2c89c1e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a6331e8.css",
+    "static/js/main.bcdad00f.js"
+  ]
+}
